@@ -1,0 +1,39 @@
+/* ----------- EXTRA SMALL SCREENS -------------  */
+
+@media (width < 300px) {
+    .card__description {
+        font-size: 1.25rem;
+    }
+
+    .card__title {
+        font-size: 0.65rem;
+    }
+
+}
+
+/* ----------- MEDIUM SCREENS ------------  */
+
+@media (width > 550px) {
+    .card__description {
+        font-size: 1.75rem;
+    }
+
+    .card__title {
+        font-size: 0.85rem;
+    }
+
+}
+
+/* ------ LARGE SCREENS --------  */
+
+@media(width> 900px) {
+
+    .card {
+        padding: 3em 1.25em;
+    }
+
+    .card__dice-wrapper {
+        padding: 0.85em;
+    }
+
+}
