@@ -5,7 +5,7 @@ const card = document.querySelector(".card");
 const id = document.querySelector(".card__index");
 const advice = document.querySelector(".card__description");
 let rotation = 0;
-let isFetching = false; // Add a request lock
+let isFetching = false;
 
 // Function to get the result
 async function adviceGenerator() {
@@ -16,18 +16,17 @@ async function adviceGenerator() {
     isFetching = true;
     dice.disabled = true;
     dice.classList.add("loading");
-
     const url = "https://api.adviceslip.com/advice";
     const response = await fetch(url);
 
-    // Check for HTTP errors (404, 500, etc.)
+    // Condition for HTTP errors (404, 500, etc.)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
 
-    // Only update UI and rotate if we got valid data
+    // Update UI and rotate if we got valid data
     card.classList.add("active");
     id.innerText = result.slip.id;
     advice.innerText = result.slip.advice;
@@ -36,7 +35,7 @@ async function adviceGenerator() {
   } catch (error) {
     card.classList.add("active");
     advice.innerText = error.message.includes("Failed to fetch")
-      ? "Network error - check connection"
+      ? "Network error - Please check connection"
       : error.message;
     advice.style.color = "hsl(1, 83%, 63%)";
   } finally {

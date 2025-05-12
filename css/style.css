@@ -77,7 +77,7 @@ p {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: calc(100% + -1em);
+    top: calc(100% - 1em);
     cursor: pointer;
     transition: 0.25s box-shadow ease-in;
 }
