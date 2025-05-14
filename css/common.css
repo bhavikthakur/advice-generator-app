@@ -1,0 +1,35 @@
+:root {
+    /* ---PRIMARY COLORS----  */
+    --clr-blue-200: hsl(193, 38%, 86%);
+    --clr-green-300: hsl(150, 100%, 66%);
+
+    /* ----- SECONDARY COLORS----  */
+    --clr-blue-600: hsl(217, 19%, 38%);
+    --clr-blue-900: hsl(217, 19%, 24%);
+    --clr-blue-950: hsl(218, 23%, 16%);
+
+    /* ----- ERROR--------  */
+    --clr-red-300: hsl(1, 83%, 63%);
+
+    /* ----------BORDER RADIUS----------  */
+    --radius-small-5: 0.5em;
+    --radius-rounded-999: 50%;
+
+}
+
+@font-face {
+    font-family: "manrope";
+    font-weight: 800;
+    src: url(../Fonts/Manrope/static/Manrope-ExtraBold.woff) format("woff");
+}
+
+body {
+    font-family: "manrope", sans-serif;
+    font-weight: 800;
+    font-size: 1.55rem;
+    background-color: var(--clr-blue-950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

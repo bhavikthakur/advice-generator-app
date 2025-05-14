@@ -33,11 +33,17 @@ async function adviceGenerator() {
     rotation += 180;
     diceImg.style.transform = `rotate(${rotation}deg)`;
   } catch (error) {
-    card.classList.add("active");
-    advice.innerText = error.message.includes("Failed to fetch")
-      ? "Network error - Please check connection"
-      : error.message;
+    let message;
+    if (error.message.includes("Failed to fetch")) {
+      message = "Network error - Check internet connection";
+    } else if (error instanceof TypeError) {
+      message = "Invalid request setup";
+    } else {
+      message = `Error: ${error.message}`;
+    }
+    advice.innerText = message;
     advice.style.color = "hsl(1, 83%, 63%)";
+    card.classList.add("active");
   } finally {
     isFetching = false;
     dice.disabled = false;
